@@ -11,6 +11,7 @@ def plot_data(data):
     plt.plot(data[0],data[1],'ro')
     plt.xlabel('x')
     plt.ylabel('y')
+    plt.title('Regresion Lineal Simple')
     plt.show()
 
 # creation of 30 points of data, with x and y values
