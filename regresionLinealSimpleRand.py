@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import funciones as func
 # function to elevate data to 10^3 in cientific notation
 # because the data is originaly between 0 and 1
 def e3(x):
@@ -39,11 +39,6 @@ def predict(feature,w):
         y[i] = w[0] + w[1]*feature[i]
     return y
 
-def getRSS(data,prediction):
-    rss = 0
-    for i in range(0,len(data)):
-        rss += (data[i] - prediction[i])**2
-    return rss
 
 # creation of 30 points of data, with x and y values
 data = np.random.rand(2,50)
@@ -59,6 +54,6 @@ print w
 
 y = predict(data[0],w)
 
-rss = getRSS(data[1],y)
+rss = func.getRSS(data[1],y)
 plot_prediction(data,y, rss)
 
