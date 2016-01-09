@@ -24,6 +24,7 @@ def plot_prediction(data,prediction, rss):
     plt.annotate( textRSS ,xy = (data[0].mean(), data[1].mean() ), xytext=(data[0].mean()-100, data[1].mean()+40))
     plt.show()
 
+
 #function to get coefficient w1
 def getW1(data):
     return ( ((data[0] - data[0].mean()) * (data[1] - data[1].mean())  ).sum() / ((data[0] - data[0].mean())**2).sum() )
@@ -40,17 +41,17 @@ def predict(feature,w):
     return y
 
 
-# creation of 30 points of data, with x and y values
-data = np.random.rand(2,50)
-w = np.zeros(2)
-#data to 10^3
-data= e3(data)
-
-#caption of coefficients
-w[1] = getW1(data)
-w[0] = getW0(data,w[1])
-
-print w
+# # creation of 30 points of data, with x and y values
+# data = np.random.rand(2,50)
+# w = np.zeros(2)
+# #data to 10^3
+# data= e3(data)
+#
+# #caption of coefficients
+# w[1] = getW1(data)
+# w[0] = getW0(data,w[1])
+#
+# print w
 
 y = predict(data[0],w)
 
